@@ -307,7 +307,7 @@ def ray_intersect_aabb(ray, aabb):
     return point
 
 @all_parameters_as_numpy_arrays
-def plane_intersect_aabb(plane_in, aabb):
+def plane_intersect_aabb(plane_in, aabb_in):
     """Calculates one intersection point of the plane and the aabb.
        This point is granted to be inside the aabb and along the ray passing by the aabb center and
        parallel to the plane normal. Otherwise explained it is the intersecting point nearest to the
@@ -323,7 +323,7 @@ def plane_intersect_aabb(plane_in, aabb):
     """
 
     # Convert AABB to center-extents representation
-    obj_aabb = aabb.create_from_points(aabb)
+    obj_aabb = aabb.create_from_points(aabb_in)
     aabb_center = aabb.centre_point(obj_aabb)
     bary_extent = aabb.maximum(obj_aabb) - aabb_center
 
