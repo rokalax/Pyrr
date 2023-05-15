@@ -5,7 +5,7 @@ various forms data types.
 from __future__ import absolute_import, division, print_function
 import math
 import numpy as np
-from . import rectangle, vector, vector3, plane
+from . import rectangle, vector, vector3, plane, aabb
 from .utils import all_parameters_as_numpy_arrays, parameters_as_numpy_arrays, solve_quadratic_equation
 
 """
