@@ -323,8 +323,9 @@ def plane_intersect_aabb(plane_in, aabb):
     """
 
     # Convert AABB to center-extents representation
-    aabb_center = aabb.centre_point(aabb)
-    bary_extent = aabb.maximum(aabb) - aabb_center
+    obj_aabb = aabb.create_from_points(aabb)
+    aabb_center = aabb.centre_point(obj_aabb)
+    bary_extent = aabb.maximum(obj_aabb) - aabb_center
 
     plane_origin = plane.position(plane_in)
     plane_normal = plane.normal(plane_in)
